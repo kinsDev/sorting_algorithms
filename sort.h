@@ -1,45 +1,29 @@
 #ifndef SORT_H
 #define SORT_H
 
-#include <stdio.h>
-#include <stdlib.h>
-
-/* Macros defining the comparison directions for bitonic sort */
-#define ASCENDING 0
-#define DESCENDING 1
-
-/* Enumeration to represent boolean values */
-typedef enum bool
-{
-    FALSE = 0,
-    TRUE
-} bool;
+#include <stddef.h>
 
 /**
- * Struct listint_s - Definition of a doubly linked list node
+ * struct listint_s - Doubly linked list node
  *
  * @n: Integer stored in the node
- * @prev: Pointer to the previous element in the list
- * @next: Pointer to the next element in the list
+ * @prev: Pointer to the previous element of the list
+ * @next: Pointer to the next element of the list
  */
 typedef struct listint_s
 {
-    const int n;
-    struct listint_s *prev;
-    struct listint_s *next;
+    const int n; /* Stores an integer value in the node */
+    struct listint_s *prev; /* Pointer to the previous element of the list */
+    struct listint_s *next; /* Pointer to the next element of the list */
 } listint_t;
 
-/* Helper function for swapping integers */
-void swap_ints(int *a, int *b);
-
-/* Helper functions for printing arrays and linked lists */
-void print_array(const int *array, size_t size);
-void print_list(const listint_t *list);
-
-/* Function prototypes for sorting algorithms */
-void bubble_sort(int *array, size_t size);
-void insertion_sort_list(listint_t **list);
-void selection_sort(int *array, size_t size);
-void quick_sort(int *array, size_t size);
+void bubble_sort(int *array, size_t size); /* Function declaration for bubble sort */
+void insertion_sort_list(listint_t **list); /* Function declaration for insertion sort */
+void selection_sort(int *array, size_t size); /* Function declaration for selection sort */
+void quick_sort(int *array, size_t size); /* Function declaration for quick sort */
+void print_list(const listint_t *list); /* Function declaration to print a doubly linked list */
+void print_array(const int *array, size_t size); /* Function declaration to print an array */
+void swap_int(int *a, int *b); /* Function declaration to swap two integers */
+int lomuto_partition(int *array, size_t size, int l, int h); /* Function declaration for Lomuto partitioning */
 
 #endif

@@ -2,24 +2,32 @@
 #include <stdio.h>
 
 /**
- * Function: print_array
- * ---------------------
- * Description: Prints an array of integers to the standard output.
+ * print_array - Function to print an array of integers
  *
- * @param array: Pointer to the array to be printed.
- * @param size: Number of elements in the array.
+ * @array: The array to be printed
+ * @size: Number of elements in @array
  */
+
 void print_array(const int *array, size_t size)
 {
     size_t i;
 
     i = 0;
+
+    /* Loop through the array and print each element */
     while (array && i < size)
     {
+        /* Print a comma and space before each element (except the first) */
         if (i > 0)
-            printf(", "); // Print a comma and space if it's not the first element.
-        printf("%d", array[i]); // Print the current element.
+            printf(", ");
+        
+        /* Print the current element of the array */
+        printf("%d", array[i]);
+        
+        /* Increment the index to move to the next element */
         ++i;
     }
-    printf("\n"); // Print a newline character at the end.
+
+    /* Print a newline character to end the line */
+    printf("\n");
 }

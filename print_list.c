@@ -2,19 +2,17 @@
 #include "sort.h"
 
 /**
- * Function: print_list
- * -------------------
- * Description:
- *   This function prints a list of integers to the standard output.
+ * print_list - This function prints a list of integers
  *
- * Parameters:
- *   - list: A pointer to the list of integers to be printed.
+ * @list: Pointer to the list to be printed
  */
+
 void print_list(const listint_t *list)
 {
     int i;
 
     i = 0;
+
     while (list)
     {
         if (i > 0)
